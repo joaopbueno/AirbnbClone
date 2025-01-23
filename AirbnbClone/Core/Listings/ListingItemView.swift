@@ -19,6 +19,9 @@ struct ListingItemView: View {
     
     var body: some View {
         VStack(spacing: 8) {
+            ListingImageCarouselView()
+                .frame(height: 320)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
             
             TabView {
                 ForEach(images, id: \.self) { image in
@@ -34,6 +37,7 @@ struct ListingItemView: View {
             HStack(alignment: .top) {
                 VStack(alignment: .leading) {
                     Text("Miami, Florida")
+                        .foregroundStyle(.black)
                     
                     Text("12 mi away")
                         .foregroundStyle(.gray)
@@ -46,6 +50,7 @@ struct ListingItemView: View {
                             .fontWeight(.semibold)
                         Text("$night")
                     }
+                    .foregroundStyle(.black)
                 }
                 
                 Spacer()
@@ -55,6 +60,7 @@ struct ListingItemView: View {
                     
                     Text("4.86")
                 }
+                .foregroundStyle(.black)
             }
             .font(.footnote)
         }
