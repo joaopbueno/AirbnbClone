@@ -10,15 +10,21 @@ import SwiftUI
 struct ListingItemView: View {
     
     var images = [
-        ""
+        "casa",
+        "casa1",
+        "casa2",
+        "casa3",
+        "casa4"
     ]
     
     var body: some View {
         VStack(spacing: 8) {
             
             TabView {
-                ForEach(0 ... 3, id: \.self) { image in
-                    Rectangle()
+                ForEach(images, id: \.self) { image in
+                    Image(image)
+                        .resizable()
+                        .scaledToFill()
                 }
             }
             .frame(height: 320)
