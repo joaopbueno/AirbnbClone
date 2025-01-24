@@ -19,10 +19,6 @@ struct ListingItemView: View {
     
     var body: some View {
         VStack(spacing: 8) {
-            ListingImageCarouselView()
-                .frame(height: 320)
-                .clipShape(RoundedRectangle(cornerRadius: 10))
-            
             TabView {
                 ForEach(images, id: \.self) { image in
                     Image(image)
